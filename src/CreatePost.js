@@ -3,41 +3,52 @@ import { Mutation } from 'react-apollo'
 
 import './styles/CreatePost.css'
 
-import CreatePost from './Mutations/CreatePost'
+import CreatePostQuery from './Mutations/CreatePost'
 
 // title
 // image URL
 // body
 // status (draft OR published)
 
+// Complete save as draft capabilites
+
 const CreatePost = () => {
+
+  let published = false
+  let message = ''
 
   return (
 
-    <Mutation mutation={CreatePost}>
+    <Mutation mutation={CreatePostQuery}>
       {(addPost, { data }) => (
-
-
         <div className="card">
           <form
             onSubmit={e => {
               e.preventDefault();
               addPost({ variables: {
                 userid: 1,
-                timestamp: ((new Date).toISOString()),
-                title,
-                body,
+                timestamp: (new Date()).toISOString(),
+                title: this.title.value || '',
+                body: this.body.value || '',
+                imageUrl: this.imageUrl.value || '',
+                // published: (publish ? true : false)
                 published
               } })
+              if (published) {
+                this.title.value = ''
+                this.body.value = ''
+                this.imageUrl.value = ''
+              }
             }}
             >
             <h3>Create a new blog post</h3>
+            {message.length > 0 && message}
             <div className="input-wrapper">
               <label htmlFor="title">Title</label>
               <input
                 id="title"
                 type="text"
-                ref={node => title = node}
+                ref={node => this.title = node}
               />
             </div>
             <div className="input-wrapper">
@@ -45,7 +56,7 @@ const CreatePost = () => {
               <input
                 id="imageUrl"
                 type="text"
-                ref={node => imageUrl = node}
+                ref={node => this.imageUrl = node}
               />
             </div>
             <div className="input-wrapper">
@@ -53,18 +64,48 @@ const CreatePost = () => {
               <textarea
                 id="body"
                 type="text"
+                ref={node => this.body = node}
                 className="input-post-body"
               />
             </div>
+
+
+            {/* <div className="input-wrapper">
+              <label htmlFor="publish">Check to publish</label>
+              <input
+                id="publish"
+                type="radio"
+                name="ispublished"
+                ref={node => this.publish = node}
+              />
+              <label htmlFor="draft">Check to save a draft</label>
+              <input
+                id="draft"
+                type="radio"
+                name="ispublished"
+                ref={node => this.draft = node}
+              />
+            </div> */}
+
+
             <div className="btn-wrapper">
-              <button>Save Draft</button>
-              <button>Publish Draft</button>
+              <button
+                onClick={() => {
+                  published = false
+                  message = 'Draft Saved!'
+                }}
+                type="submit"
+              >Save Draft</button>
+              <button
+                onClick={() => {
+                  published = true
+                  message = 'Success!'
+                }}
+                type="submit"
+              >Publish</button>
             </div>
           </form>
         </div>
-
-
-
       )}
     </Mutation>
 
