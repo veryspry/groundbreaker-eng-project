@@ -1,5 +1,5 @@
-// import qql from 'graphql-tag' // this is what AWS docs use
-import gql from 'apollo-boost' // this is what I have used before --> what is the difference?
+import gql from 'graphql-tag' // this is what AWS docs use
+// import gql from 'apollo-boost' // this is what I have used before --> what is the difference?
 
 export default gql`
   query AllPosts {

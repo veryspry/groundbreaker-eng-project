@@ -13,37 +13,16 @@ import gql from 'graphql-tag' // this is what AWS docs use
 // import gql from 'apollo-boost'
 
 // Queries:
-// import AllPostsQuery from './Queries/AllPostsQuery';
+import AllPostsQuery from './Queries/AllPostsQuery';
 
 import history from './history'
 import './styles/index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
-import { awsKey } from './secrets'
 
-
-const AllPostsQuery = gql`
-  query AllPosts {
-    listBlogs {
-      items {
-         __id
-        timestamp
-        userid
-        title
-        body
-        status
-        comments {
-          userid
-          timestamp
-          body
-        }
-      }
-    }
-  }
-`
 
 const client = new AWSAppSyncClient({
-    url: AppSync.graphqlEndpoint,
+    url: AppSync.graphqlEndpoint, // NOTE: does this need to be uri to match the apollo docs?
     region: AppSync.region,
     auth: {
         type: AUTH_TYPE.API_KEY,
@@ -51,6 +30,27 @@ const client = new AWSAppSyncClient({
     },
     disableOffline: true,
 });
+
+
+// const testQuery = async () => {
+//   try {
+//     let res = await client.query({
+//       query: AllPostsQuery
+//     });
+//     console.log('HERE IS THE QUERY RESULT:', res);
+//   } catch (err) {
+//     console.log('AN ERROR OCCURED:', err);
+//   }
+// }
+
+client.query({
+      query: AllPostsQuery
+    })
+    .then(result => console.log('HERE IS THE QUERY RESULT:', result))
+    .catch(err => console.log('AN ERROR OCCURED:', err))
+
+
+
 
 // Connect Apollo Client to App and all of its children
 const WithProvider = () => (
@@ -77,7 +77,7 @@ const AllPostsWithData = compose(
       fetchPolicy: 'cache-and-network'
     },
     props: (props) => ({
-      posts: props.data // NOTE: this is probably incomplete
+      posts: props.data.allPost && props.data.allPost.posts // NOTE: this is probably incomplete
     })
   })
 )
