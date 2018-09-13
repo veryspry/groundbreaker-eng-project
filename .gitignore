@@ -21,5 +21,4 @@ yarn-debug.log*
 yarn-error.log*
 
 # secrets
-/src/secrets.js
 /src/AppSync.js
