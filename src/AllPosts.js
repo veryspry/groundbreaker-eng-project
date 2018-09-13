@@ -6,7 +6,7 @@ import * as uuidV1 from 'uuid/v1' // timebased uuid --> https://github.com/broof
 
 import './styles/AllPosts.css'
 
-import AllPostsQuery from './Queries/AllPostsQuery';
+import GetPublishedPosts from './Queries/GetPublishedPosts';
 
 /*
   NOTE: Fix date issue as soon as I can get a proper date format into the DB
@@ -20,7 +20,7 @@ const AllPosts = (props) => {
     <div>
       <h2>All of the posts will go here</h2>
       <Query
-        query={AllPostsQuery}
+        query={GetPublishedPosts}
         >
         {({ loading, error, data }) => {
           console.log('DATA:', data)

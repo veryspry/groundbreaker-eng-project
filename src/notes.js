@@ -249,5 +249,6 @@ const getPosts =
   "body": "A wild body",
   "published": true,
   "id": "9904bd7e-ffbc-43a5-9ba4-ac3e541b43b0",
-  "postid": "9904bd7e-ffbc-43a5-9ba4-ac3e541b43b0"
+  "postid": "9904bd7e-ffbc-43a5-9ba4-ac3e541b43b0",
+  "imageUrl": "https://unsplash.com/photos/94BPPwuzTHE"
 }
