@@ -21,7 +21,7 @@ const AllPosts = (props) => {
       <h2>All of the posts will go here</h2>
       <Query
         query={AllPostsQuery}
-      >
+        >
         {({ loading, error, data }) => {
           console.log('DATA:', data)
           if (loading) return <h1>Loading...</h1>

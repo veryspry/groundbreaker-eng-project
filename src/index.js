@@ -31,25 +31,11 @@ const client = new AWSAppSyncClient({
     disableOffline: true,
 });
 
-
-// const testQuery = async () => {
-//   try {
-//     let res = await client.query({
+// client.query({
 //       query: AllPostsQuery
-//     });
-//     console.log('HERE IS THE QUERY RESULT:', res);
-//   } catch (err) {
-//     console.log('AN ERROR OCCURED:', err);
-//   }
-// }
-
-client.query({
-      query: AllPostsQuery
-    })
-    .then(result => console.log('HERE IS THE QUERY RESULT:', result))
-    .catch(err => console.log('AN ERROR OCCURED:', err))
-
-
+//     })
+//     .then(result => console.log('HERE IS THE QUERY RESULT:', result))
+//     .catch(err => console.log('AN ERROR OCCURED:', err))
 
 
 // Connect Apollo Client to App and all of its children

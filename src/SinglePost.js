@@ -2,17 +2,34 @@ import React from 'react'
 import { Query } from 'react-apollo'
 
 import GetPost from './Queries/GetPost'
+import GetPostComments from './Queries/GetPostComments'
+
+import CommentList from './CommentList'
 
 const singlePost = (props) => {
-  console.log('URL ID', props.match.params.postid);
   return (
     <div>
-      {/* <h2>{this.props.match.params.}</h2> */}
       <Query
         query={GetPost}
-        variables={{ postid: props.match.params.postid }}
+        variables={{ id: props.match.params.postid }}
         >
+        {({ loading, error, data }) => {
+          if (loading) return <h1>Loading...</h1>
+          // if (error) return <h1>Error: {error}</h1>
+          if (error) {
+            console.log(error)
+            return <h1>Error</h1>
+          }
+          let post = data.getPost
+          return (
+            <div>
+              <h1>{post.title}</h1>
+              <p>{post.body}</p>
+            </div>
+          )
+        }}
       </Query>
+      <CommentList postid={props.match.params.postid}/>
     </div>
   )
 }
