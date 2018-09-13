@@ -32,12 +32,12 @@ const CreatePost = () => {
                 body: this.body.value || '',
                 imageUrl: this.imageUrl.value || '',
                 // published: (publish ? true : false)
-                published
-              } })
+                published,
+              }});
               if (published) {
-                this.title.value = ''
-                this.body.value = ''
-                this.imageUrl.value = ''
+                this.title.value = '';
+                this.body.value = '';
+                this.imageUrl.value = '';
               }
             }}
             >

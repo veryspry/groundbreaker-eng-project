@@ -14,7 +14,6 @@ const CommentList = (props) => {
         variables={{ postid }}
         >
           {({ loading, error, data }) => {
-            // console.log('DATA:', data)
             if (loading) return <h1>Loading...</h1>
             // if (error) return <h1>Error: {error}</h1>
             if (error) {
@@ -23,7 +22,6 @@ const CommentList = (props) => {
             }
             // console.log('DATA:', data)
             return data.listComments.items.map(({ id, userid, postid, timestamp, body }) => {
-              console.log(body)
               return (
                 <div key={id} className="comment-wrapper">
                   <p>{body}</p>
