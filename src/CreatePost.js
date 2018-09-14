@@ -10,7 +10,6 @@ import CreatePostQuery from './Mutations/CreatePost'
 // body
 // status (draft OR published)
 
-// Complete save as draft capabilites
 
 const CreatePost = () => {
 
@@ -22,16 +21,16 @@ const CreatePost = () => {
     <Mutation mutation={CreatePostQuery}>
       {(addPost, { data }) => (
         <div className="card">
+          {console.log('DATA FROM CREATE', data)}
           <form
             onSubmit={e => {
               e.preventDefault();
               addPost({ variables: {
-                userid: 1,
+                userid: 1, // currently hardcoded to one user
                 timestamp: (new Date()).toISOString(),
                 title: this.title.value || '',
                 body: this.body.value || '',
                 imageUrl: this.imageUrl.value || '',
-                // published: (publish ? true : false)
                 published,
               }});
               if (published) {
@@ -68,26 +67,6 @@ const CreatePost = () => {
                 className="input-post-body"
               />
             </div>
-
-
-            {/* <div className="input-wrapper">
-              <label htmlFor="publish">Check to publish</label>
-              <input
-                id="publish"
-                type="radio"
-                name="ispublished"
-                ref={node => this.publish = node}
-              />
-              <label htmlFor="draft">Check to save a draft</label>
-              <input
-                id="draft"
-                type="radio"
-                name="ispublished"
-                ref={node => this.draft = node}
-              />
-            </div> */}
-
-
             <div className="btn-wrapper">
               <button
                 onClick={() => {
@@ -108,8 +87,6 @@ const CreatePost = () => {
         </div>
       )}
     </Mutation>
-
-
   )
 }
 

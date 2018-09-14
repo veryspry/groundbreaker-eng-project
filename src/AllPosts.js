@@ -6,7 +6,7 @@ import * as uuidV1 from 'uuid/v1' // timebased uuid --> https://github.com/broof
 
 import './styles/AllPosts.css'
 
-import GetPublishedPosts from './Queries/GetPublishedPosts';
+import GetPublishedPosts from './Queries/GetPublishedPosts'
 
 /*
   NOTE: Fix date issue as soon as I can get a proper date format into the DB

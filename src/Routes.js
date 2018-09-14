@@ -1,5 +1,5 @@
 import React from 'react'
-import {withRouter, Route, Switch} from 'react-router-dom'
+import { withRouter, Route, Switch, Redirect } from 'react-router-dom'
 
 // Components:
 import CreatePost from './CreatePost'
@@ -9,8 +9,9 @@ import SinglePost from './SinglePost'
 const Routes = () => {
   return (
     <Switch>
+      <Redirect exact path="/" to="/posts" />
       <Route exact path="/posts" component={AllPosts} />
-      <Route exact path="/posts/create" component={CreatePost} />
+      <Route exact path="/posts/add" component={CreatePost} />
       <Route exact path="/posts/:postid" component={SinglePost} />
     </Switch>
   )

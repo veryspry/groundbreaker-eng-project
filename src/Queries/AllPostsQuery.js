@@ -10,6 +10,7 @@ export default gql`
           timestamp
           title
           body
+          imageUrl
           published
         }
       }
