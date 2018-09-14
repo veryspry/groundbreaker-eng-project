@@ -1,5 +1,6 @@
 import React from 'react'
 import { Query } from 'react-apollo'
+import * as moment from 'moment' // Date parser --> http://momentjs.com/docs/
 
 import GetPostComments from './Queries/GetPostComments'
 
@@ -22,11 +23,12 @@ const CommentList = (props) => {
             }
             // console.log('DATA:', data)
             return data.listComments.items.map(({ id, userid, postid, timestamp, body }) => {
+              console.log(moment(timestamp).format("YYYY-MM-DD HH:mm"))
               return (
                 <div key={id} className="comment-wrapper">
                   <p>{body}</p>
                   <p>posted by: {userid}</p>
-                  {timestamp && <p>posted on: {timestamp}</p>}
+                  {timestamp && <p>posted on: {moment(timestamp).format("YYYY-MM-DD HH:mm")}</p>}
                 </div>
               )
             })

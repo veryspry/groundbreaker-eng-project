@@ -252,3 +252,6 @@ const getPosts =
   "postid": "9904bd7e-ffbc-43a5-9ba4-ac3e541b43b0",
   "imageUrl": "https://unsplash.com/photos/94BPPwuzTHE"
 }
+
+
+                {/* <img src="https://images.unsplash.com/photo-1536873602512-8e88cc8398b1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=60a351868d0839e686c8c5a286265f8d&auto=format&fit=crop&w=500&q=60" /> */}

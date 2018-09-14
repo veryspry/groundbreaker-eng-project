@@ -7,7 +7,8 @@ import GetPublishedPosts from './Queries/GetPublishedPosts'
 const PostNameList = () => {
 
   return (
-    <div>
+    <div className="post-name-list">
+      <h2>Post List:</h2>
       <Query query={GetPublishedPosts}>
 
         { ({ loading, error, data }) => {
@@ -18,11 +19,14 @@ const PostNameList = () => {
             return <h1>Error Loading</h1>
           }
 
-          return data.listPosts.items.map(({ id, userid, title, timestamp }) => {
+          return data.listPosts.items.map(({ id, title }) => {
             return (
-              <NavLink to={`/posts/${id}`} >
-                <p>{title}</p>
-              </NavLink>
+              <div key={id}>
+                <Link to={`/posts/${id}`} >
+                  {title}
+                </Link>
+              </div>
+
             )
           })
         }}
@@ -32,6 +36,8 @@ const PostNameList = () => {
   )
 }
 
-
+// {/* <Link to={`/posts/${id}`} key={id}>
+//   <p>{title}</p>
+// </Link> */}
 
 export default PostNameList

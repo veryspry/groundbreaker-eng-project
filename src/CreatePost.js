@@ -30,7 +30,7 @@ const CreatePost = () => {
                 timestamp: (new Date()).toISOString(),
                 title: this.title.value || '',
                 body: this.body.value || '',
-                imageUrl: this.imageUrl.value || '',
+                imageUrl: this.imageUrl.value === '' ? '/img/default.jpg' : this.imageUrl.value,
                 published,
               }});
               if (published) {
