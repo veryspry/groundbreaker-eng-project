@@ -2,13 +2,12 @@
 ## Setup instructions to run this project locally in production mode.
 
 
-1. Clone this repository on to your machine
-2. Navigate in the root directory and `npm install`
+1. Clone this repository to your machine
+2. Navigate into the root directory and `npm install`
 3. While still inside the root directory `cd ./src && touch AppSync.js`
-4. Request contents from myself (Matt Ehlinger) as this file contains sensitive information including an AWS API key
-5. Add the code that I provide to you to `AppSync.js`
+4. Request contents from myself (Matt Ehlinger - ehlinger.matt@gmail.com) as this file contains sensitive information including an AWS API key
+5. Add the code snippet that I provide to you to `AppSync.js`
 6. Navigate back to the root directory
-
 7. Choose one of the following to start the project:
 
   - To run in process.env = "production" --> `npm run start-production`
