@@ -12,7 +12,7 @@ const Header = () => {
       </div>
       <nav className="nav-wrapper">
         <li><Link to="/posts" >All Posts</Link></li>
-        <li><Link to="/posts/add" >New Post</Link></li>
+        <li><Link to="/posts/add" >Write New Post</Link></li>
       </nav>
     </header>
   );

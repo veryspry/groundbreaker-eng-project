@@ -21,9 +21,17 @@ const CommentList = (props) => {
               console.log(error)
               return <h1>Error</h1>
             }
-            // console.log('DATA:', data)
-            return data.listComments.items.map(({ id, userid, postid, timestamp, body }) => {
-              console.log(moment(timestamp).format("YYYY-MM-DD HH:mm"))
+            // Client side comment sort by post datetime
+            // Apollo Cache is read-only...
+            // copy comment array and sort by timestamp
+            const sortArr = []
+            data.listComments.items.forEach(e => sortArr.push(e))
+            sortArr.sort((a, b) => {
+              if (a.timestamp < b.timestamp) return -1
+              if (a.timestamp > b.timestamp) return 1
+              return 0
+            })
+            return sortArr.map(({ id, userid, postid, timestamp, body }) => {
               return (
                 <div key={id} className="comment-wrapper">
                   <p>{body}</p>

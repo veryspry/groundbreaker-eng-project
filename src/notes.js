@@ -255,3 +255,21 @@ const getPosts =
 
 
                 {/* <img src="https://images.unsplash.com/photo-1536873602512-8e88cc8398b1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=60a351868d0839e686c8c5a286265f8d&auto=format&fit=crop&w=500&q=60" /> */}
+
+
+https://docs.aws.amazon.com/appsync/latest/devguide/building-a-client-app-react.html
+
+
+// THE FOLLOWING IS TAKEN FROM https://docs.aws.amazon.com/appsync/latest/devguide/building-a-client-app-react.html
+// WHAT DOES IT DO?
+
+// const AllPostsWithData = compose(
+//   graphql(AllPostsQuery, {
+//     options: {
+//       fetchPolicy: 'cache-and-network'
+//     },
+//     props: (props) => ({
+//       posts: props.data.allPost && props.data.allPost.posts // NOTE: this is probably incomplete
+//     })
+//   })
+// )

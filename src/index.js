@@ -31,12 +31,6 @@ const client = new AWSAppSyncClient({
     disableOffline: true,
 });
 
-// client.query({
-//       query: AllPostsQuery
-//     })
-//     .then(result => console.log('HERE IS THE QUERY RESULT:', result))
-//     .catch(err => console.log('AN ERROR OCCURED:', err))
-
 
 // Connect Apollo Client to App and all of its children
 // Rehydrated is required when using AWS with apollo-client and react. NOTE: Why??
@@ -56,20 +50,4 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-registerServiceWorker();
-
-
-
-// THE FOLLOWING IS TAKEN FROM https://docs.aws.amazon.com/appsync/latest/devguide/building-a-client-app-react.html
-// WHAT DOES IT DO?
-
-// const AllPostsWithData = compose(
-//   graphql(AllPostsQuery, {
-//     options: {
-//       fetchPolicy: 'cache-and-network'
-//     },
-//     props: (props) => ({
-//       posts: props.data.allPost && props.data.allPost.posts // NOTE: this is probably incomplete
-//     })
-//   })
-// )
+registerServiceWorker()

@@ -23,11 +23,9 @@ const AllPosts = (props) => {
         query={GetPublishedPosts}
         >
         {({ loading, error, data }) => {
-          console.log('DATA:', data)
           if (loading) return <h1>Loading...</h1>
           if (error) return <h1>Error: {error}</h1>
           return data.listPosts.items.map(({ id, userid, title, timestamp }) => {
-            // console.log('DATE:', moment((Number(timestamp)), 'MMMM DD YYYY'));
             return (
               <div
                 className="post-wrapper"

@@ -22,3 +22,6 @@ yarn-error.log*
 
 # secrets
 /src/AppSync.js
+
+# notes
+/src/notes.js

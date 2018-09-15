@@ -21,7 +21,6 @@ const CreatePost = () => {
     <Mutation mutation={CreatePostQuery}>
       {(addPost, { data }) => (
         <div className="card">
-          {console.log('DATA FROM CREATE', data)}
           <form
             onSubmit={e => {
               e.preventDefault();

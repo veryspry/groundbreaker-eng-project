@@ -33,7 +33,6 @@ const singlePost = (props) => {
               return <h1>Error</h1>
             }
             let post = data.getPost
-            console.log(post);
             return (
               <div>
                 <img src={post.imageUrl ? post.imageUrl : "/img/default.jpg"} />

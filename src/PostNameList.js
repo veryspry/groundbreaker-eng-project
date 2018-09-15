@@ -12,7 +12,6 @@ const PostNameList = () => {
       <Query query={GetPublishedPosts}>
 
         { ({ loading, error, data }) => {
-          console.log('DATA IN LIST:', data);
           if (loading) return <h1>Loading...</h1>
           if (error) {
             console.log('Error:', error);
