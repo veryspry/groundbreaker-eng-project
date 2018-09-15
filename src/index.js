@@ -4,16 +4,11 @@ import {Router} from 'react-router-dom';
 import AWSAppSyncClient from "aws-appsync";
 import { Rehydrated } from 'aws-appsync-react';
 import { AUTH_TYPE } from 'aws-appsync/lib/link/auth-link';
-import { graphql, ApolloProvider, compose } from 'react-apollo';
+import { ApolloProvider } from 'react-apollo';
 import * as AWS from 'aws-sdk';
 import AppSync from './AppSync.js';
 
-
-import gql from 'graphql-tag' // this is what AWS docs use
-// import gql from 'apollo-boost'
-
-// Queries:
-import AllPostsQuery from './Queries/AllPostsQuery';
+import gql from 'graphql-tag'
 
 import history from './history'
 import './styles/index.css';

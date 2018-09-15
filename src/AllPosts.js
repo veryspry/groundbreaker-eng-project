@@ -2,7 +2,6 @@ import React from 'react'
 import { Query } from 'react-apollo'
 import { Link } from 'react-router-dom'
 import * as moment from 'moment' // Date parser --> http://momentjs.com/docs/
-import * as uuidV1 from 'uuid/v1' // timebased uuid --> https://github.com/broofa/node-uuid
 
 import './styles/AllPosts.css'
 

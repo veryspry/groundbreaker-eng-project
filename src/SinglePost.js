@@ -2,7 +2,6 @@ import React from 'react'
 import { Query, Mutation } from 'react-apollo'
 
 import GetPost from './Queries/GetPost'
-import GetPostComments from './Queries/GetPostComments'
 import CreateComment from './Mutations/CreateComment'
 
 import CommentList from './CommentList'
@@ -35,7 +34,7 @@ const singlePost = (props) => {
             let post = data.getPost
             return (
               <div>
-                <img src={post.imageUrl ? post.imageUrl : "/img/default.jpg"} />
+                <img src={post.imageUrl ? post.imageUrl : "/img/default.jpg"} alt=""/>
                 <h1>{post.title}</h1>
                 <p>{post.body}</p>
               </div>
