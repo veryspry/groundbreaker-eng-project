@@ -1,6 +1,7 @@
 import React from 'react'
 import { Query } from 'react-apollo'
-import * as moment from 'moment' // Date parser --> http://momentjs.com/docs/
+// Date parser --> http://momentjs.com/docs/
+import * as moment from 'moment'
 
 import GetPostComments from './Queries/GetPostComments'
 

@@ -34,8 +34,7 @@ const AllPosts = (props) => {
                 <Link
                   to={`/posts/${id}`}>{title}</Link>
                 <h4>written by: {userid}</h4>
-                {/* <h4>published on: {moment().format(timestamp)}</h4> */}
-                {/* <h4>published on: {moment(Number(timestamp))._d}</h4> */}
+                {timestamp && <p>posted on: {moment(timestamp).format("YYYY-MM-DD HH:mm")}</p>}
               </div>
             )
           })
