@@ -1,5 +1,5 @@
 
-Setup instructions to run this project locally in production mode.
+## Setup instructions to run this project locally in production mode.
 
 
 1. Clone this repository on to your machine
@@ -16,7 +16,7 @@ Setup instructions to run this project locally in production mode.
 
 8. As soon as the app is running, the app should open up automatically in your browser. If it doesn't, navigate to `http://localhost:3000` in your browser to see the project.
 
-
+_______________________________________________
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
