@@ -1,30 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Router} from 'react-router-dom';
-import AWSAppSyncClient from "aws-appsync";
 import { Rehydrated } from 'aws-appsync-react';
-import { AUTH_TYPE } from 'aws-appsync/lib/link/auth-link';
 import { ApolloProvider } from 'react-apollo';
-import * as AWS from 'aws-sdk';
-import AppSync from './AppSync.js';
-
-import gql from 'graphql-tag'
-
 import history from './history'
 import './styles/index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
+import client from './apollo/client'
 
-const client = new AWSAppSyncClient({
-    url: AppSync.graphqlEndpoint, // NOTE: does this need to be uri to match the apollo docs?
-    region: AppSync.region,
-    auth: {
-        type: AUTH_TYPE.API_KEY,
-        apiKey: AppSync.apiKey,
-    },
-    disableOffline: true,
-});
+// import * as AWS from 'aws-sdk';
+// import gql from 'graphql-tag'
 
 
 // Connect Apollo Client to App and all of its children
